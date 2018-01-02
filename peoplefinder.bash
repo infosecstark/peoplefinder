@@ -12,11 +12,8 @@ read fname
 
 if [ -z $fname ]; then 
   echo "Please enter your first name";
+  exit 1
 fi
-
-echo -n "Enter middle name, if available:  "
-read mname
-
 
 echo -n "Enter last name: "
 read lname
@@ -33,6 +30,7 @@ echo
 read -p "Press <Enter> key to continue"
 cd /Applications/Google\ Chrome.app/
 cd Contents/MacOS/
-./Google\ Chrome -new-tab http://www.pipl.com/search/?q=$fname+$mname+$lname/ & 
+./Google\ Chrome -new-tab http://www.pipl.com/search/?q=$fname+$lname/ & 
 ./Google\ Chrome -new-tab http://www.spokeo.com/$fname-$lname/ &
 ./Google\ Chrome -new-tab http://www.zabasearch.com/people/$fname+$lname/ &
+./Google\ Chrome -new-tab www.peekyou.com/$fname_$lname/ &
